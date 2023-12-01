@@ -1,0 +1,1498 @@
+{
+    "_id_": 1,
+    "_type": "App",
+    "features": {
+        "_id_": 2,
+        "_type": "App.Features",
+        "list_": [
+            {
+                "_id_": 3,
+                "_type": "Activity",
+                "features": {
+                    "_id_": 4,
+                    "_type": "Activity.Features",
+                    "list_": [
+                        {
+                            "_id_": 5,
+                            "_type": "Variable",
+                            "init": {
+                                "_id_": 6,
+                                "_type": "Null"
+                            },
+                            "name": {
+                                "_id_": 7,
+                                "_type": "String",
+                                "value_": "uri"
+                            }
+                        },
+                        {
+                            "_id_": 8,
+                            "_type": "Variable",
+                            "init": {
+                                "_id_": 9,
+                                "_type": "String.Empty"
+                            },
+                            "name": {
+                                "_id_": 10,
+                                "_type": "String",
+                                "value_": "text"
+                            }
+                        },
+                        {
+                            "_id_": 11,
+                            "_type": "Variable",
+                            "init": {
+                                "_id_": 12,
+                                "_type": "String.Empty"
+                            },
+                            "name": {
+                                "_id_": 13,
+                                "_type": "String",
+                                "value_": "savedText"
+                            }
+                        },
+                        {
+                            "_id_": 14,
+                            "_type": "Variable",
+                            "init": {
+                                "_id_": 15,
+                                "_type": "False"
+                            },
+                            "name": {
+                                "_id_": 16,
+                                "_type": "String",
+                                "value_": "modified"
+                            }
+                        },
+                        {
+                            "_id_": 17,
+                            "_type": "Variable",
+                            "init": {
+                                "_id_": 18,
+                                "_type": "False"
+                            },
+                            "name": {
+                                "_id_": 19,
+                                "_type": "String",
+                                "value_": "canSave"
+                            }
+                        },
+                        {
+                            "_id_": 20,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 21,
+                                "_type": "String",
+                                "value_": "clearModified"
+                            },
+                            "body": {
+                                "_id_": 22,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 23,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 24,
+                                            "_type": "String",
+                                            "value_": "modified"
+                                        },
+                                        "value": {
+                                            "_id_": 25,
+                                            "_type": "False"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 26,
+                                        "_type": "Call",
+                                        "name": {
+                                            "_id_": 27,
+                                            "_type": "String",
+                                            "value_": "updateFlags"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 28,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 29,
+                                "_type": "String",
+                                "value_": "updateFlags"
+                            },
+                            "body": {
+                                "_id_": 30,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 31,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 32,
+                                            "_type": "String",
+                                            "value_": "canSave"
+                                        },
+                                        "value": {
+                                            "_id_": 33,
+                                            "_type": "And",
+                                            "a": {
+                                                "_id_": 34,
+                                                "_type": "IsNotNull",
+                                                "value": {
+                                                    "_id_": 35,
+                                                    "_type": "Variable.Get",
+                                                    "name": {
+                                                        "_id_": 36,
+                                                        "_type": "String",
+                                                        "value_": "uri"
+                                                    }
+                                                }
+                                            },
+                                            "b": {
+                                                "_id_": 37,
+                                                "_type": "Variable.Get",
+                                                "name": {
+                                                    "_id_": 38,
+                                                    "_type": "String",
+                                                    "value_": "modified"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 39,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 40,
+                                "_type": "String",
+                                "value_": "updateTitle"
+                            },
+                            "body": {
+                                "_id_": 41,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 42,
+                                        "_type": "Activity.ActionBar.SetTitle",
+                                        "title": {
+                                            "_id_": 43,
+                                            "_type": "CheckValue",
+                                            "onNonNull": {
+                                                "_id_": 44,
+                                                "_type": "Try",
+                                                "onError": {
+                                                    "_id_": 45,
+                                                    "_type": "String.Empty"
+                                                },
+                                                "body": {
+                                                    "_id_": 46,
+                                                    "_type": "DocumentFile.GetName",
+                                                    "document": {
+                                                        "_id_": 47,
+                                                        "_type": "Variable.Get",
+                                                        "name": {
+                                                            "_id_": 48,
+                                                            "_type": "String",
+                                                            "value_": "uri"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "onNull": {
+                                                "_id_": 49,
+                                                "_type": "String.Empty"
+                                            },
+                                            "value": {
+                                                "_id_": 50,
+                                                "_type": "Variable.Get",
+                                                "name": {
+                                                    "_id_": 51,
+                                                    "_type": "String",
+                                                    "value_": "uri"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 52,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 53,
+                                "_type": "String",
+                                "value_": "load"
+                            },
+                            "body": {
+                                "_id_": 54,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 55,
+                                        "_type": "Content.Read",
+                                        "onError": {
+                                            "_id_": 56,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 57,
+                                                    "_type": "ShowToast",
+                                                    "message": {
+                                                        "_id_": 58,
+                                                        "_type": "Expression",
+                                                        "text": {
+                                                            "_id_": 59,
+                                                            "_type": "String",
+                                                            "value_": "error.toString()"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "asText": {
+                                            "_id_": 60,
+                                            "_type": "True"
+                                        },
+                                        "uri": {
+                                            "_id_": 61,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 62,
+                                                "_type": "String",
+                                                "value_": "uri"
+                                            }
+                                        },
+                                        "onSuccess": {
+                                            "_id_": 63,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 64,
+                                                    "_type": "TextView.SetText",
+                                                    "view": {
+                                                        "_id_": 65,
+                                                        "_type": "IdReference",
+                                                        "ref": {
+                                                            "_id_": 66,
+                                                            "_type": "String",
+                                                            "value_": "@id\/editor"
+                                                        }
+                                                    },
+                                                    "text": {
+                                                        "_id_": 67,
+                                                        "_type": "LocalVariable.Get",
+                                                        "name": {
+                                                            "_id_": 68,
+                                                            "_type": "String",
+                                                            "value_": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 69,
+                                                    "_type": "Variable.Set",
+                                                    "name": {
+                                                        "_id_": 70,
+                                                        "_type": "String",
+                                                        "value_": "savedText"
+                                                    },
+                                                    "value": {
+                                                        "_id_": 71,
+                                                        "_type": "LocalVariable.Get",
+                                                        "name": {
+                                                            "_id_": 72,
+                                                            "_type": "String",
+                                                            "value_": "text"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 73,
+                                                    "_type": "Call",
+                                                    "name": {
+                                                        "_id_": 74,
+                                                        "_type": "String",
+                                                        "value_": "clearModified"
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 75,
+                                                    "_type": "Call",
+                                                    "name": {
+                                                        "_id_": 76,
+                                                        "_type": "String",
+                                                        "value_": "updateTitle"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 77,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 78,
+                                "_type": "String",
+                                "value_": "open"
+                            },
+                            "body": {
+                                "_id_": 79,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 80,
+                                        "_type": "DocumentFile.Open",
+                                        "mimeType": {
+                                            "_id_": 81,
+                                            "_type": "String",
+                                            "value_": "text\/*"
+                                        },
+                                        "onResult": {
+                                            "_id_": 82,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 83,
+                                                    "_type": "Variable.Set",
+                                                    "name": {
+                                                        "_id_": 84,
+                                                        "_type": "String",
+                                                        "value_": "uri"
+                                                    },
+                                                    "value": {
+                                                        "_id_": 85,
+                                                        "_type": "Expression",
+                                                        "text": {
+                                                            "_id_": 86,
+                                                            "_type": "String",
+                                                            "value_": "uri"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 87,
+                                                    "_type": "Call",
+                                                    "name": {
+                                                        "_id_": 88,
+                                                        "_type": "String",
+                                                        "value_": "load"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 89,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 90,
+                                "_type": "String",
+                                "value_": "save"
+                            },
+                            "body": {
+                                "_id_": 91,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 92,
+                                        "_type": "Content.Write",
+                                        "onError": {
+                                            "_id_": 93,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 94,
+                                                    "_type": "ShowToast",
+                                                    "message": {
+                                                        "_id_": 95,
+                                                        "_type": "String",
+                                                        "value_": "Failed to save"
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 96,
+                                                    "_type": "Console.Log",
+                                                    "message": {
+                                                        "_id_": 97,
+                                                        "_type": "Expression",
+                                                        "text": {
+                                                            "_id_": 98,
+                                                            "_type": "String",
+                                                            "value_": "error.toString()"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "data": {
+                                            "_id_": 99,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 100,
+                                                "_type": "String",
+                                                "value_": "text"
+                                            }
+                                        },
+                                        "uri": {
+                                            "_id_": 101,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 102,
+                                                "_type": "String",
+                                                "value_": "uri"
+                                            }
+                                        },
+                                        "onSuccess": {
+                                            "_id_": 103,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 104,
+                                                    "_type": "ShowToast",
+                                                    "message": {
+                                                        "_id_": 105,
+                                                        "_type": "String",
+                                                        "value_": "Saved"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "_id_": 106,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 107,
+                                            "_type": "String",
+                                            "value_": "savedText"
+                                        },
+                                        "value": {
+                                            "_id_": 108,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 109,
+                                                "_type": "String",
+                                                "value_": "text"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "_id_": 110,
+                                        "_type": "Call",
+                                        "name": {
+                                            "_id_": 111,
+                                            "_type": "String",
+                                            "value_": "clearModified"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 112,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 113,
+                                "_type": "String",
+                                "value_": "saveAs"
+                            },
+                            "body": {
+                                "_id_": 114,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 115,
+                                        "_type": "DocumentFile.Create",
+                                        "mimeType": {
+                                            "_id_": 116,
+                                            "_type": "String",
+                                            "value_": "text\/*"
+                                        },
+                                        "onResult": {
+                                            "_id_": 117,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 118,
+                                                    "_type": "Variable.Set",
+                                                    "name": {
+                                                        "_id_": 119,
+                                                        "_type": "String",
+                                                        "value_": "uri"
+                                                    },
+                                                    "value": {
+                                                        "_id_": 120,
+                                                        "_type": "Expression",
+                                                        "text": {
+                                                            "_id_": 121,
+                                                            "_type": "String",
+                                                            "value_": "intent.getData()"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 122,
+                                                    "_type": "Call",
+                                                    "name": {
+                                                        "_id_": 123,
+                                                        "_type": "String",
+                                                        "value_": "save"
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 124,
+                                                    "_type": "Call",
+                                                    "name": {
+                                                        "_id_": 125,
+                                                        "_type": "String",
+                                                        "value_": "updateFlags"
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 126,
+                                                    "_type": "Call",
+                                                    "name": {
+                                                        "_id_": 127,
+                                                        "_type": "String",
+                                                        "value_": "updateTitle"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 128,
+                            "_type": "Function",
+                            "name": {
+                                "_id_": 129,
+                                "_type": "String",
+                                "value_": "newDoc"
+                            },
+                            "body": {
+                                "_id_": 130,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 131,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 132,
+                                            "_type": "String",
+                                            "value_": "uri"
+                                        },
+                                        "value": {
+                                            "_id_": 133,
+                                            "_type": "Null"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 134,
+                                        "_type": "TextView.SetText",
+                                        "view": {
+                                            "_id_": 135,
+                                            "_type": "String",
+                                            "value_": "editor"
+                                        },
+                                        "text": {
+                                            "_id_": 136,
+                                            "_type": "String.Empty"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 137,
+                                        "_type": "Variable.Set",
+                                        "name": {
+                                            "_id_": 138,
+                                            "_type": "String",
+                                            "value_": "savedText"
+                                        },
+                                        "value": {
+                                            "_id_": 139,
+                                            "_type": "String.Empty"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 140,
+                                        "_type": "Call",
+                                        "name": {
+                                            "_id_": 141,
+                                            "_type": "String",
+                                            "value_": "clearModified"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 142,
+                                        "_type": "Call",
+                                        "name": {
+                                            "_id_": 143,
+                                            "_type": "String",
+                                            "value_": "updateTitle"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 144,
+                            "_type": "Activity.OnBackPressed",
+                            "action": {
+                                "_id_": 145,
+                                "_type": "Sequence",
+                                "list_": [
+                                    {
+                                        "_id_": 146,
+                                        "_type": "CheckValue",
+                                        "onTrue": {
+                                            "_id_": 147,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 148,
+                                                    "_type": "Dialog.Show",
+                                                    "dialog": {
+                                                        "_id_": 149,
+                                                        "_type": "String",
+                                                        "value_": "confirmExit"
+                                                    }
+                                                },
+                                                {
+                                                    "_id_": 150,
+                                                    "_type": "True",
+                                                    "comment": {
+                                                        "_id_": 151,
+                                                        "_type": "Comment",
+                                                        "list_": [],
+                                                        "text_": "Tells the system that the event has been consumed."
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "onFalse": {
+                                            "_id_": 152,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 153,
+                                                    "_type": "False",
+                                                    "comment": {
+                                                        "_id_": 154,
+                                                        "_type": "Comment",
+                                                        "list_": [],
+                                                        "text_": "Tells the system that the event has not been consumed, so that the system uses it to finish the activity."
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "value": {
+                                            "_id_": 155,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 156,
+                                                "_type": "String",
+                                                "value_": "modified"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "_id_": 157,
+                            "_type": "Sequence",
+                            "list_": [
+                                {
+                                    "_id_": 158,
+                                    "_type": "Activity.SetContentView"
+                                },
+                                {
+                                    "_id_": 159,
+                                    "_type": "Variable.Set",
+                                    "name": {
+                                        "_id_": 160,
+                                        "_type": "String",
+                                        "value_": "uri"
+                                    },
+                                    "value": {
+                                        "_id_": 161,
+                                        "_type": "Expression",
+                                        "text": {
+                                            "_id_": 162,
+                                            "_type": "String",
+                                            "value_": "activity.getIntent().getData()"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_id_": 163,
+                                    "_type": "CheckValue",
+                                    "onNonNull": {
+                                        "_id_": 164,
+                                        "_type": "Sequence",
+                                        "list_": [
+                                            {
+                                                "_id_": 165,
+                                                "_type": "Call",
+                                                "name": {
+                                                    "_id_": 166,
+                                                    "_type": "String",
+                                                    "value_": "load"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "value": {
+                                        "_id_": 167,
+                                        "_type": "Variable.Get",
+                                        "name": {
+                                            "_id_": 168,
+                                            "_type": "String",
+                                            "value_": "uri"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_id_": 169,
+                                    "_type": "Call",
+                                    "name": {
+                                        "_id_": 170,
+                                        "_type": "String",
+                                        "value_": "updateTitle"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "_id_": 171,
+                            "_type": "Intent.Filter",
+                            "elements": {
+                                "_id_": 172,
+                                "_type": "List",
+                                "list_": [
+                                    {
+                                        "_id_": 1020,
+                                        "_type": "Intent.Filter.Action",
+                                        "name": {
+                                            "_id_": 1024,
+                                            "_type": "String",
+                                            "value_": "ACTION_VIEW"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 173,
+                                        "_type": "Intent.Filter.Action",
+                                        "name": {
+                                            "_id_": 174,
+                                            "_type": "String",
+                                            "value_": "ACTION_EDIT"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 175,
+                                        "_type": "Intent.Filter.Category",
+                                        "name": {
+                                            "_id_": 176,
+                                            "_type": "String",
+                                            "value_": "CATEGORY_DEFAULT"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 177,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 178,
+                                            "_type": "String",
+                                            "value_": "text\/*"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 683,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 684,
+                                            "_type": "String",
+                                            "value_": "application\/javascript"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 687,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 688,
+                                            "_type": "String",
+                                            "value_": "application\/json"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 695,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 696,
+                                            "_type": "String",
+                                            "value_": "application\/xml"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "theme": {
+                    "_id_": 203,
+                    "_type": "StyleReference",
+                    "ref": {
+                        "_id_": 204,
+                        "_type": "String",
+                        "value_": "@style\/appTheme"
+                    }
+                },
+                "menu": {
+                    "_id_": 205,
+                    "_type": "Menu",
+                    "items": {
+                        "_id_": 206,
+                        "_type": "List",
+                        "list_": [
+                            {
+                                "_id_": 207,
+                                "_type": "Menu.Item",
+                                "title": {
+                                    "_id_": 208,
+                                    "_type": "String",
+                                    "value_": "New"
+                                },
+                                "action": {
+                                    "_id_": 209,
+                                    "_type": "Sequence",
+                                    "list_": [
+                                        {
+                                            "_id_": 210,
+                                            "_type": "CheckValue",
+                                            "onTrue": {
+                                                "_id_": 211,
+                                                "_type": "Sequence",
+                                                "list_": [
+                                                    {
+                                                        "_id_": 212,
+                                                        "_type": "Dialog.Show",
+                                                        "dialog": {
+                                                            "_id_": 213,
+                                                            "_type": "String",
+                                                            "value_": "confirmDiscard"
+                                                        },
+                                                        "argument": {
+                                                            "_id_": 214,
+                                                            "_type": "String",
+                                                            "value_": "newDoc"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "onFalse": {
+                                                "_id_": 215,
+                                                "_type": "Call",
+                                                "name": {
+                                                    "_id_": 216,
+                                                    "_type": "String",
+                                                    "value_": "newDoc"
+                                                }
+                                            },
+                                            "value": {
+                                                "_id_": 217,
+                                                "_type": "Variable.Get",
+                                                "name": {
+                                                    "_id_": 218,
+                                                    "_type": "String",
+                                                    "value_": "modified"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "id": {
+                                    "_id_": 219,
+                                    "_type": "String",
+                                    "value_": ""
+                                }
+                            },
+                            {
+                                "_id_": 220,
+                                "_type": "Menu.Item",
+                                "title": {
+                                    "_id_": 221,
+                                    "_type": "String",
+                                    "value_": "Open"
+                                },
+                                "action": {
+                                    "_id_": 222,
+                                    "_type": "CheckValue",
+                                    "onTrue": {
+                                        "_id_": 223,
+                                        "_type": "Sequence",
+                                        "list_": [
+                                            {
+                                                "_id_": 224,
+                                                "_type": "Dialog.Show",
+                                                "dialog": {
+                                                    "_id_": 225,
+                                                    "_type": "String",
+                                                    "value_": "confirmDiscard"
+                                                },
+                                                "argument": {
+                                                    "_id_": 226,
+                                                    "_type": "String.Text",
+                                                    "value": {
+                                                        "_id_": 227,
+                                                        "_type": "String",
+                                                        "value_": "open"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "onFalse": {
+                                        "_id_": 228,
+                                        "_type": "Call",
+                                        "name": {
+                                            "_id_": 229,
+                                            "_type": "String",
+                                            "value_": "open"
+                                        }
+                                    },
+                                    "value": {
+                                        "_id_": 230,
+                                        "_type": "Variable.Get",
+                                        "name": {
+                                            "_id_": 231,
+                                            "_type": "String",
+                                            "value_": "modified"
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 232,
+                                    "_type": "String",
+                                    "value_": ""
+                                }
+                            },
+                            {
+                                "_id_": 233,
+                                "_type": "Menu.Item",
+                                "title": {
+                                    "_id_": 234,
+                                    "_type": "String",
+                                    "value_": "Save"
+                                },
+                                "enabledValue": {
+                                    "_id_": 235,
+                                    "_type": "Variable.Get",
+                                    "name": {
+                                        "_id_": 236,
+                                        "_type": "String",
+                                        "value_": "canSave"
+                                    }
+                                },
+                                "action": {
+                                    "_id_": 237,
+                                    "_type": "Call",
+                                    "name": {
+                                        "_id_": 238,
+                                        "_type": "String",
+                                        "value_": "save"
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 239,
+                                    "_type": "String",
+                                    "value_": ""
+                                }
+                            },
+                            {
+                                "_id_": 240,
+                                "_type": "Menu.Item",
+                                "title": {
+                                    "_id_": 241,
+                                    "_type": "String",
+                                    "value_": "Save As"
+                                },
+                                "action": {
+                                    "_id_": 242,
+                                    "_type": "Call",
+                                    "name": {
+                                        "_id_": 243,
+                                        "_type": "String",
+                                        "value_": "saveAs"
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 244,
+                                    "_type": "String",
+                                    "value_": ""
+                                }
+                            },
+                            {
+                                "_id_": 245,
+                                "_type": "Menu.Item",
+                                "title": {
+                                    "_id_": 246,
+                                    "_type": "String",
+                                    "value_": "Share"
+                                },
+                                "enabledValue": {
+                                    "_id_": 247,
+                                    "_type": "CheckValue",
+                                    "onOther": {
+                                        "_id_": 248,
+                                        "_type": "False"
+                                    },
+                                    "onNonEmptyString": {
+                                        "_id_": 249,
+                                        "_type": "True"
+                                    },
+                                    "value": {
+                                        "_id_": 250,
+                                        "_type": "Variable.Get",
+                                        "name": {
+                                            "_id_": 251,
+                                            "_type": "String",
+                                            "value_": "text"
+                                        }
+                                    }
+                                },
+                                "action": {
+                                    "_id_": 252,
+                                    "_type": "ShareText",
+                                    "text": {
+                                        "_id_": 253,
+                                        "_type": "TextView.GetText",
+                                        "view": {
+                                            "_id_": 254,
+                                            "_type": "String",
+                                            "value_": "editor"
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "_id_": 255,
+                                    "_type": "String",
+                                    "value_": ""
+                                }
+                            }
+                        ],
+                        "elementType_": "Menu.Element"
+                    }
+                },
+                "contentView": {
+                    "_id_": 256,
+                    "_type": "EditText",
+                    "requestFocus": {
+                        "_id_": 257,
+                        "_type": "Boolean",
+                        "value_": true
+                    },
+                    "id": {
+                        "_id_": 258,
+                        "_type": "String",
+                        "value_": "editor"
+                    },
+                    "onTextChange": {
+                        "_id_": 259,
+                        "_type": "Sequence",
+                        "list_": [
+                            {
+                                "_id_": 260,
+                                "_type": "Variable.Set",
+                                "name": {
+                                    "_id_": 261,
+                                    "_type": "String",
+                                    "value_": "text"
+                                },
+                                "comment": {
+                                    "_id_": 262,
+                                    "_type": "Comment",
+                                    "list_": [],
+                                    "text_": "When the text changes, update the variable 'text', so that the visibility of the 'share' menu item can be updated automatically."
+                                },
+                                "value": {
+                                    "_id_": 263,
+                                    "_type": "TextView.GetText",
+                                    "view": {
+                                        "_id_": 264,
+                                        "_type": "LocalVariable.Get",
+                                        "name": {
+                                            "_id_": 265,
+                                            "_type": "String",
+                                            "value_": "view"
+                                        },
+                                        "comment": {
+                                            "_id_": 266,
+                                            "_type": "Comment",
+                                            "list_": [],
+                                            "text_": "It is provided by the view itself. All view event handlers have a local variable named 'view' that holds a reference to the view associated with the event."
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "_id_": 267,
+                                "_type": "Variable.Set",
+                                "name": {
+                                    "_id_": 268,
+                                    "_type": "String",
+                                    "value_": "modified"
+                                },
+                                "value": {
+                                    "_id_": 269,
+                                    "_type": "Not",
+                                    "value": {
+                                        "_id_": 270,
+                                        "_type": "Equal",
+                                        "a": {
+                                            "_id_": 271,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 272,
+                                                "_type": "String",
+                                                "value_": "text"
+                                            }
+                                        },
+                                        "b": {
+                                            "_id_": 273,
+                                            "_type": "Variable.Get",
+                                            "name": {
+                                                "_id_": 274,
+                                                "_type": "String",
+                                                "value_": "savedText"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "_id_": 275,
+                                "_type": "Call",
+                                "name": {
+                                    "_id_": 276,
+                                    "_type": "String",
+                                    "value_": "updateFlags"
+                                }
+                            }
+                        ]
+                    },
+                    "android:layout_width": {
+                        "_id_": 277,
+                        "_type": "View.SpecialDimension",
+                        "value_": "match_parent"
+                    },
+                    "android:background": {
+                        "_id_": 278,
+                        "_type": "ColorReference",
+                        "ref": {
+                            "_id_": 279,
+                            "_type": "String",
+                            "value_": "@color\/editorBackground"
+                        }
+                    },
+                    "android:layout_height": {
+                        "_id_": 280,
+                        "_type": "View.SpecialDimension",
+                        "value_": "match_parent"
+                    },
+                    "android:padding": {
+                        "_id_": 281,
+                        "_type": "Dimension",
+                        "unit": {
+                            "_id_": 282,
+                            "_type": "DimensionUnit",
+                            "value_": "dp"
+                        },
+                        "value": {
+                            "_id_": 283,
+                            "_type": "Float",
+                            "value_": 10
+                        }
+                    },
+                    "android:gravity": {
+                        "_id_": 284,
+                        "_type": "Gravity",
+                        "value_": "top"
+                    }
+                },
+                "launchMode": {
+                    "_id_": 285,
+                    "_type": "Activity.LaunchMode",
+                    "value_": "standard"
+                },
+                "name": {
+                    "_id_": 286,
+                    "_type": "String",
+                    "value_": "Main"
+                },
+                "launcher": {
+                    "_id_": 287,
+                    "_type": "Activity.Launcher"
+                }
+            },
+            {
+                "_id_": 288,
+                "_type": "Dialog",
+                "message": {
+                    "_id_": 289,
+                    "_type": "String",
+                    "value_": "You have unsaved changes."
+                },
+                "negativeButton": {
+                    "_id_": 290,
+                    "_type": "Dialog.Button",
+                    "text": {
+                        "_id_": 291,
+                        "_type": "String",
+                        "value_": "Don't Exit"
+                    }
+                },
+                "name": {
+                    "_id_": 292,
+                    "_type": "String",
+                    "value_": "confirmExit"
+                },
+                "positiveButton": {
+                    "_id_": 293,
+                    "_type": "Dialog.Button",
+                    "onClick": {
+                        "_id_": 294,
+                        "_type": "Activity.Finish"
+                    },
+                    "text": {
+                        "_id_": 295,
+                        "_type": "String",
+                        "value_": "Exit"
+                    }
+                }
+            },
+            {
+                "_id_": 296,
+                "_type": "Dialog",
+                "message": {
+                    "_id_": 297,
+                    "_type": "String",
+                    "value_": "This will discard unsaved changes."
+                },
+                "negativeButton": {
+                    "_id_": 298,
+                    "_type": "Dialog.Button",
+                    "text": {
+                        "_id_": 299,
+                        "_type": "String",
+                        "value_": "Cancel"
+                    }
+                },
+                "name": {
+                    "_id_": 300,
+                    "_type": "String",
+                    "value_": "confirmDiscard"
+                },
+                "positiveButton": {
+                    "_id_": 301,
+                    "_type": "Dialog.Button",
+                    "onClick": {
+                        "_id_": 302,
+                        "_type": "Call",
+                        "name": {
+                            "_id_": 303,
+                            "_type": "Dialog.Argument"
+                        }
+                    },
+                    "text": {
+                        "_id_": 304,
+                        "_type": "String",
+                        "value_": "OK"
+                    }
+                }
+            },
+            {
+                "_id_": 305,
+                "_type": "ColorResource",
+                "color": {
+                    "_id_": 306,
+                    "_type": "Color",
+                    "color_": -3019307
+                },
+                "name": {
+                    "_id_": 307,
+                    "_type": "String",
+                    "value_": "editorBackground"
+                }
+            },
+            {
+                "_id_": 308,
+                "_type": "ColorResource",
+                "color": {
+                    "_id_": 309,
+                    "_type": "Color",
+                    "color_": -16703984
+                },
+                "configuration": {
+                    "_id_": 310,
+                    "_type": "ResourceConfiguration",
+                    "nightMode": {
+                        "_id_": 311,
+                        "_type": "App.ResourceConfiguration.NightMode",
+                        "value_": "night"
+                    }
+                },
+                "name": {
+                    "_id_": 312,
+                    "_type": "String",
+                    "value_": "editorBackground"
+                }
+            },
+            {
+                "_id_": 313,
+                "_type": "ColorResource",
+                "color": {
+                    "_id_": 314,
+                    "_type": "Color",
+                    "color_": -12101811
+                },
+                "name": {
+                    "_id_": 315,
+                    "_type": "String",
+                    "value_": "primary"
+                }
+            },
+            {
+                "_id_": 316,
+                "_type": "StyleResource",
+                "name": {
+                    "_id_": 317,
+                    "_type": "String",
+                    "value_": "appTheme"
+                },
+                "style": {
+                    "_id_": 318,
+                    "_type": "Style",
+                    "parent": {
+                        "_id_": 319,
+                        "_type": "AndroidTheme",
+                        "value_": "Theme.AppCompat.DayNight.DarkActionBar"
+                    },
+                    "colorPrimary": {
+                        "_id_": 320,
+                        "_type": "ColorReference",
+                        "ref": {
+                            "_id_": 321,
+                            "_type": "String",
+                            "value_": "@color\/primary"
+                        }
+                    },
+                    "colorAccent": {
+                        "_id_": 322,
+                        "_type": "Color",
+                        "color_": -14508289
+                    },
+                    "colorPrimaryDark": {
+                        "_id_": 323,
+                        "_type": "ColorReference",
+                        "ref": {
+                            "_id_": 324,
+                            "_type": "String",
+                            "value_": "@color\/primary"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "settings": {
+        "_id_": 325,
+        "_type": "App.Settings",
+        "debugBuild": {
+            "_id_": 326,
+            "_type": "App.Settings.DebugBuild"
+        },
+        "releaseBuild": {
+            "_id_": 327,
+            "_type": "App.Settings.ReleaseBuild"
+        }
+    },
+    "packaging": {
+        "_id_": 328,
+        "_type": "App.Packaging",
+        "icon": {
+            "_id_": 329,
+            "_type": "AdaptiveIcon",
+            "background": {
+                "_id_": 330,
+                "_type": "Color",
+                "color_": -1
+            },
+            "foreground": {
+                "_id_": 331,
+                "_type": "DrawableReference",
+                "ref": {
+                    "_id_": 332,
+                    "_type": "String",
+                    "value_": "@drawable\/app_icon"
+                }
+            },
+            "legacyIcon": {
+                "_id_": 333,
+                "_type": "MipmapReference",
+                "ref": {
+                    "_id_": 334,
+                    "_type": "String",
+                    "value_": "@mipmap\/app_icon"
+                }
+            }
+        },
+        "targetSdk": {
+            "_id_": 335,
+            "_type": "Integer",
+            "value_": 33
+        },
+        "label": {
+            "_id_": 336,
+            "_type": "String",
+            "value_": "Editor"
+        },
+        "versionName": {
+            "_id_": 337,
+            "_type": "String",
+            "value_": "v1"
+        },
+        "versionCode": {
+            "_id_": 338,
+            "_type": "Integer",
+            "value_": 1
+        },
+        "minSdk": {
+            "_id_": 339,
+            "_type": "Integer",
+            "value_": 24
+        },
+        "permissions": {
+            "_id_": 340,
+            "_type": "App.Permissions"
+        },
+        "packageName": {
+            "_id_": 341,
+            "_type": "String",
+            "value_": "com.aaappps.editor"
+        }
+    },
+    "_abVer": 221
+}
