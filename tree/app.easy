@@ -8,6 +8,24 @@
             {
                 "_id_": 3,
                 "_type": "Activity",
+                "splashScreen": {
+                    "_id_": 6184,
+                    "_type": "Activity.SplashScreen",
+                    "background": {
+                        "_id_": 6218,
+                        "_type": "Color",
+                        "color_": -16777216
+                    },
+                    "brandingImage": {
+                        "_id_": 6210,
+                        "_type": "DrawableReference",
+                        "ref": {
+                            "_id_": 6212,
+                            "_type": "String",
+                            "value_": "@drawable\/app_icon"
+                        }
+                    }
+                },
                 "features": {
                     "_id_": 4,
                     "_type": "Activity.Features",
@@ -779,6 +797,11 @@
                         {
                             "_id_": 171,
                             "_type": "Intent.Filter",
+                            "autoVerify": {
+                                "_id_": 5847,
+                                "_type": "Boolean",
+                                "value_": true
+                            },
                             "elements": {
                                 "_id_": 172,
                                 "_type": "List",
@@ -845,6 +868,33 @@
                                             "_type": "String",
                                             "value_": "application\/xml"
                                         }
+                                    },
+                                    {
+                                        "_id_": 5834,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 5836,
+                                            "_type": "String",
+                                            "value_": "application\/html"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 5843,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 5844,
+                                            "_type": "String",
+                                            "value_": "application\/php"
+                                        }
+                                    },
+                                    {
+                                        "_id_": 5840,
+                                        "_type": "Intent.Filter.Data",
+                                        "mimeType": {
+                                            "_id_": 5842,
+                                            "_type": "String",
+                                            "value_": "application\/css"
+                                        }
                                     }
                                 ]
                             }
@@ -860,42 +910,182 @@
                         "value_": "@style\/appTheme"
                     }
                 },
+                "debug": {
+                    "_id_": 13409,
+                    "_type": "Debug",
+                    "disabled": {
+                        "_id_": 13410,
+                        "_type": "Boolean",
+                        "value_": true
+                    }
+                },
+                "drawer": {
+                    "_id_": 6243,
+                    "_type": "Drawer",
+                    "id": {
+                        "_id_": 6257,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 6255,
+                        "_type": "ViewList",
+                        "list_": []
+                    },
+                    "menu": {
+                        "_id_": 6245,
+                        "_type": "Drawer.NativeMenu",
+                        "id": {
+                            "_id_": 6253,
+                            "_type": "String",
+                            "value_": ""
+                        },
+                        "views": {
+                            "_id_": 6251,
+                            "_type": "ViewList",
+                            "list_": []
+                        },
+                        "menu": {
+                            "_id_": 6247,
+                            "_type": "Menu",
+                            "items": {
+                                "_id_": 6249,
+                                "_type": "List",
+                                "list_": [
+                                    {
+                                        "_id_": 6259,
+                                        "_type": "Menu.Item",
+                                        "title": {
+                                            "_id_": 6261,
+                                            "_type": "String",
+                                            "value_": "GitHub"
+                                        },
+                                        "action": {
+                                            "_id_": 6614,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 9601,
+                                                    "_type": "Activity.StartOwn",
+                                                    "activity": {
+                                                        "_id_": 9604,
+                                                        "_type": "String",
+                                                        "value_": "Github"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "id": {
+                                            "_id_": 6263,
+                                            "_type": "String",
+                                            "value_": ""
+                                        }
+                                    },
+                                    {
+                                        "_id_": 11541,
+                                        "_type": "Menu.Item",
+                                        "title": {
+                                            "_id_": 11543,
+                                            "_type": "String",
+                                            "value_": "Paint"
+                                        },
+                                        "action": {
+                                            "_id_": 11547,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 11549,
+                                                    "_type": "Activity.StartOwn",
+                                                    "activity": {
+                                                        "_id_": 11552,
+                                                        "_type": "String",
+                                                        "value_": "Paint"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "id": {
+                                            "_id_": 11545,
+                                            "_type": "String",
+                                            "value_": ""
+                                        }
+                                    },
+                                    {
+                                        "_id_": 12479,
+                                        "_type": "Menu.Item",
+                                        "title": {
+                                            "_id_": 12481,
+                                            "_type": "String",
+                                            "value_": "VS Code"
+                                        },
+                                        "action": {
+                                            "_id_": 12485,
+                                            "_type": "Sequence",
+                                            "list_": [
+                                                {
+                                                    "_id_": 12487,
+                                                    "_type": "Activity.StartOwn",
+                                                    "activity": {
+                                                        "_id_": 12490,
+                                                        "_type": "String",
+                                                        "value_": "Code"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "id": {
+                                            "_id_": 12483,
+                                            "_type": "String",
+                                            "value_": ""
+                                        }
+                                    }
+                                ],
+                                "elementType_": "Menu.Element"
+                            }
+                        }
+                    }
+                },
+                "layoutInDisplayCutoutMode": {
+                    "_id_": 2740,
+                    "_type": "Activity.LayoutInDisplayCutoutMode",
+                    "value_": "shortEdges"
+                },
                 "menu": {
-                    "_id_": 205,
+                    "_id_": 1873,
                     "_type": "Menu",
                     "items": {
-                        "_id_": 206,
+                        "_id_": 1874,
                         "_type": "List",
                         "list_": [
                             {
-                                "_id_": 207,
+                                "_id_": 1875,
                                 "_type": "Menu.Item",
                                 "title": {
-                                    "_id_": 208,
+                                    "_id_": 1876,
                                     "_type": "String",
                                     "value_": "New"
                                 },
                                 "action": {
-                                    "_id_": 209,
+                                    "_id_": 1877,
                                     "_type": "Sequence",
                                     "list_": [
                                         {
-                                            "_id_": 210,
+                                            "_id_": 1878,
                                             "_type": "CheckValue",
                                             "onTrue": {
-                                                "_id_": 211,
+                                                "_id_": 1879,
                                                 "_type": "Sequence",
                                                 "list_": [
                                                     {
-                                                        "_id_": 212,
+                                                        "_id_": 1880,
                                                         "_type": "Dialog.Show",
                                                         "dialog": {
-                                                            "_id_": 213,
+                                                            "_id_": 1881,
                                                             "_type": "String",
                                                             "value_": "confirmDiscard"
                                                         },
                                                         "argument": {
-                                                            "_id_": 214,
+                                                            "_id_": 1882,
                                                             "_type": "String",
                                                             "value_": "newDoc"
                                                         }
@@ -903,19 +1093,19 @@
                                                 ]
                                             },
                                             "onFalse": {
-                                                "_id_": 215,
+                                                "_id_": 1883,
                                                 "_type": "Call",
                                                 "name": {
-                                                    "_id_": 216,
+                                                    "_id_": 1884,
                                                     "_type": "String",
                                                     "value_": "newDoc"
                                                 }
                                             },
                                             "value": {
-                                                "_id_": 217,
+                                                "_id_": 1885,
                                                 "_type": "Variable.Get",
                                                 "name": {
-                                                    "_id_": 218,
+                                                    "_id_": 1886,
                                                     "_type": "String",
                                                     "value_": "modified"
                                                 }
@@ -924,39 +1114,39 @@
                                     ]
                                 },
                                 "id": {
-                                    "_id_": 219,
+                                    "_id_": 1887,
                                     "_type": "String",
                                     "value_": ""
                                 }
                             },
                             {
-                                "_id_": 220,
+                                "_id_": 1888,
                                 "_type": "Menu.Item",
                                 "title": {
-                                    "_id_": 221,
+                                    "_id_": 1889,
                                     "_type": "String",
                                     "value_": "Open"
                                 },
                                 "action": {
-                                    "_id_": 222,
+                                    "_id_": 1890,
                                     "_type": "CheckValue",
                                     "onTrue": {
-                                        "_id_": 223,
+                                        "_id_": 1891,
                                         "_type": "Sequence",
                                         "list_": [
                                             {
-                                                "_id_": 224,
+                                                "_id_": 1892,
                                                 "_type": "Dialog.Show",
                                                 "dialog": {
-                                                    "_id_": 225,
+                                                    "_id_": 1893,
                                                     "_type": "String",
                                                     "value_": "confirmDiscard"
                                                 },
                                                 "argument": {
-                                                    "_id_": 226,
+                                                    "_id_": 1894,
                                                     "_type": "String.Text",
                                                     "value": {
-                                                        "_id_": 227,
+                                                        "_id_": 1895,
                                                         "_type": "String",
                                                         "value_": "open"
                                                     }
@@ -965,129 +1155,129 @@
                                         ]
                                     },
                                     "onFalse": {
-                                        "_id_": 228,
+                                        "_id_": 1896,
                                         "_type": "Call",
                                         "name": {
-                                            "_id_": 229,
+                                            "_id_": 1897,
                                             "_type": "String",
                                             "value_": "open"
                                         }
                                     },
                                     "value": {
-                                        "_id_": 230,
+                                        "_id_": 1898,
                                         "_type": "Variable.Get",
                                         "name": {
-                                            "_id_": 231,
+                                            "_id_": 1899,
                                             "_type": "String",
                                             "value_": "modified"
                                         }
                                     }
                                 },
                                 "id": {
-                                    "_id_": 232,
+                                    "_id_": 1900,
                                     "_type": "String",
                                     "value_": ""
                                 }
                             },
                             {
-                                "_id_": 233,
+                                "_id_": 1901,
                                 "_type": "Menu.Item",
                                 "title": {
-                                    "_id_": 234,
+                                    "_id_": 1902,
                                     "_type": "String",
                                     "value_": "Save"
                                 },
                                 "enabledValue": {
-                                    "_id_": 235,
+                                    "_id_": 1903,
                                     "_type": "Variable.Get",
                                     "name": {
-                                        "_id_": 236,
+                                        "_id_": 1904,
                                         "_type": "String",
                                         "value_": "canSave"
                                     }
                                 },
                                 "action": {
-                                    "_id_": 237,
+                                    "_id_": 1905,
                                     "_type": "Call",
                                     "name": {
-                                        "_id_": 238,
+                                        "_id_": 1906,
                                         "_type": "String",
                                         "value_": "save"
                                     }
                                 },
                                 "id": {
-                                    "_id_": 239,
+                                    "_id_": 1907,
                                     "_type": "String",
                                     "value_": ""
                                 }
                             },
                             {
-                                "_id_": 240,
+                                "_id_": 1908,
                                 "_type": "Menu.Item",
                                 "title": {
-                                    "_id_": 241,
+                                    "_id_": 1909,
                                     "_type": "String",
                                     "value_": "Save As"
                                 },
                                 "action": {
-                                    "_id_": 242,
+                                    "_id_": 1910,
                                     "_type": "Call",
                                     "name": {
-                                        "_id_": 243,
+                                        "_id_": 1911,
                                         "_type": "String",
                                         "value_": "saveAs"
                                     }
                                 },
                                 "id": {
-                                    "_id_": 244,
+                                    "_id_": 1912,
                                     "_type": "String",
                                     "value_": ""
                                 }
                             },
                             {
-                                "_id_": 245,
+                                "_id_": 1913,
                                 "_type": "Menu.Item",
                                 "title": {
-                                    "_id_": 246,
+                                    "_id_": 1914,
                                     "_type": "String",
                                     "value_": "Share"
                                 },
                                 "enabledValue": {
-                                    "_id_": 247,
+                                    "_id_": 1915,
                                     "_type": "CheckValue",
                                     "onOther": {
-                                        "_id_": 248,
+                                        "_id_": 1916,
                                         "_type": "False"
                                     },
                                     "onNonEmptyString": {
-                                        "_id_": 249,
+                                        "_id_": 1917,
                                         "_type": "True"
                                     },
                                     "value": {
-                                        "_id_": 250,
+                                        "_id_": 1918,
                                         "_type": "Variable.Get",
                                         "name": {
-                                            "_id_": 251,
+                                            "_id_": 1919,
                                             "_type": "String",
                                             "value_": "text"
                                         }
                                     }
                                 },
                                 "action": {
-                                    "_id_": 252,
+                                    "_id_": 1920,
                                     "_type": "ShareText",
                                     "text": {
-                                        "_id_": 253,
+                                        "_id_": 1921,
                                         "_type": "TextView.GetText",
                                         "view": {
-                                            "_id_": 254,
+                                            "_id_": 1922,
                                             "_type": "String",
                                             "value_": "editor"
                                         }
                                     }
                                 },
                                 "id": {
-                                    "_id_": 255,
+                                    "_id_": 1923,
                                     "_type": "String",
                                     "value_": ""
                                 }
@@ -1096,107 +1286,31 @@
                         "elementType_": "Menu.Element"
                     }
                 },
+                "fullScreen": {
+                    "_id_": 2378,
+                    "_type": "Activity.FullScreen"
+                },
                 "contentView": {
                     "_id_": 256,
                     "_type": "EditText",
-                    "requestFocus": {
-                        "_id_": 257,
-                        "_type": "Boolean",
-                        "value_": true
+                    "persist": {
+                        "_id_": 3759,
+                        "_type": "Persist"
                     },
                     "id": {
                         "_id_": 258,
                         "_type": "String",
                         "value_": "editor"
                     },
-                    "onTextChange": {
-                        "_id_": 259,
-                        "_type": "Sequence",
-                        "list_": [
-                            {
-                                "_id_": 260,
-                                "_type": "Variable.Set",
-                                "name": {
-                                    "_id_": 261,
-                                    "_type": "String",
-                                    "value_": "text"
-                                },
-                                "comment": {
-                                    "_id_": 262,
-                                    "_type": "Comment",
-                                    "list_": [],
-                                    "text_": "When the text changes, update the variable 'text', so that the visibility of the 'share' menu item can be updated automatically."
-                                },
-                                "value": {
-                                    "_id_": 263,
-                                    "_type": "TextView.GetText",
-                                    "view": {
-                                        "_id_": 264,
-                                        "_type": "LocalVariable.Get",
-                                        "name": {
-                                            "_id_": 265,
-                                            "_type": "String",
-                                            "value_": "view"
-                                        },
-                                        "comment": {
-                                            "_id_": 266,
-                                            "_type": "Comment",
-                                            "list_": [],
-                                            "text_": "It is provided by the view itself. All view event handlers have a local variable named 'view' that holds a reference to the view associated with the event."
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "_id_": 267,
-                                "_type": "Variable.Set",
-                                "name": {
-                                    "_id_": 268,
-                                    "_type": "String",
-                                    "value_": "modified"
-                                },
-                                "value": {
-                                    "_id_": 269,
-                                    "_type": "Not",
-                                    "value": {
-                                        "_id_": 270,
-                                        "_type": "Equal",
-                                        "a": {
-                                            "_id_": 271,
-                                            "_type": "Variable.Get",
-                                            "name": {
-                                                "_id_": 272,
-                                                "_type": "String",
-                                                "value_": "text"
-                                            }
-                                        },
-                                        "b": {
-                                            "_id_": 273,
-                                            "_type": "Variable.Get",
-                                            "name": {
-                                                "_id_": 274,
-                                                "_type": "String",
-                                                "value_": "savedText"
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "_id_": 275,
-                                "_type": "Call",
-                                "name": {
-                                    "_id_": 276,
-                                    "_type": "String",
-                                    "value_": "updateFlags"
-                                }
-                            }
-                        ]
-                    },
                     "android:layout_width": {
                         "_id_": 277,
                         "_type": "View.SpecialDimension",
                         "value_": "match_parent"
+                    },
+                    "android:freezesText": {
+                        "_id_": 4099,
+                        "_type": "Boolean",
+                        "value_": false
                     },
                     "android:background": {
                         "_id_": 278,
@@ -1230,7 +1344,22 @@
                         "_id_": 284,
                         "_type": "Gravity",
                         "value_": "top"
+                    },
+                    "android:textColor": {
+                        "_id_": 4428,
+                        "_type": "Color",
+                        "color_": -16743425
+                    },
+                    "android:editable": {
+                        "_id_": 3430,
+                        "_type": "Boolean",
+                        "value_": true
                     }
+                },
+                "background": {
+                    "_id_": 2728,
+                    "_type": "Color",
+                    "color_": -14737633
                 },
                 "launchMode": {
                     "_id_": 285,
@@ -1245,6 +1374,302 @@
                 "launcher": {
                     "_id_": 287,
                     "_type": "Activity.Launcher"
+                }
+            },
+            {
+                "_id_": 11940,
+                "_type": "Activity",
+                "features": {
+                    "_id_": 11941,
+                    "_type": "Activity.Features",
+                    "list_": []
+                },
+                "floating": {
+                    "_id_": 11942,
+                    "_type": "Boolean",
+                    "value_": true
+                },
+                "theme": {
+                    "_id_": 11943,
+                    "_type": "Theme.DayNight"
+                },
+                "label": {
+                    "_id_": 11944,
+                    "_type": "String",
+                    "value_": ""
+                },
+                "contentView": {
+                    "_id_": 11945,
+                    "_type": "RelativeLayout",
+                    "id": {
+                        "_id_": 11946,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 11947,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 11948,
+                                "_type": "WebView",
+                                "webChromeClient": {
+                                    "_id_": 11997,
+                                    "_type": "WebView.WebChromeClient"
+                                },
+                                "webViewClient": {
+                                    "_id_": 12005,
+                                    "_type": "WebView.WebViewClient"
+                                },
+                                "id": {
+                                    "_id_": 11949,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "interfaces": {
+                                    "_id_": 12009,
+                                    "_type": "List",
+                                    "list_": []
+                                },
+                                "zoom": {
+                                    "_id_": 11950,
+                                    "_type": "Boolean",
+                                    "value_": false
+                                },
+                                "url": {
+                                    "_id_": 11951,
+                                    "_type": "URL",
+                                    "url": {
+                                        "_id_": 14837,
+                                        "_type": "String",
+                                        "value_": "index.html"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "toolbar": {
+                    "_id_": 11953,
+                    "_type": "Toolbar",
+                    "id": {
+                        "_id_": 11954,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 11955,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 11956,
+                                "_type": "Button",
+                                "onClick": {
+                                    "_id_": 11957,
+                                    "_type": "Sequence",
+                                    "list_": [
+                                        {
+                                            "_id_": 11958,
+                                            "_type": "Activity.Finish"
+                                        }
+                                    ]
+                                },
+                                "id": {
+                                    "_id_": 11959,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:background": {
+                                    "_id_": 11960,
+                                    "_type": "Color",
+                                    "color_": -16777216
+                                },
+                                "android:text": {
+                                    "_id_": 11961,
+                                    "_type": "String",
+                                    "value_": "X"
+                                },
+                                "android:textAlignment": {
+                                    "_id_": 11962,
+                                    "_type": "View.TextAlignment",
+                                    "value_": "viewStart"
+                                },
+                                "android:textColor": {
+                                    "_id_": 11963,
+                                    "_type": "Color",
+                                    "color_": -65536
+                                }
+                            }
+                        ]
+                    },
+                    "android:background": {
+                        "_id_": 11964,
+                        "_type": "Color",
+                        "color_": -16777216
+                    },
+                    "app:titleTextColor": {
+                        "_id_": 11965,
+                        "_type": "Color",
+                        "color_": -16777216
+                    }
+                },
+                "background": {
+                    "_id_": 11966,
+                    "_type": "Color",
+                    "color_": -16777216
+                },
+                "name": {
+                    "_id_": 11967,
+                    "_type": "String",
+                    "value_": "Paint"
+                }
+            },
+            {
+                "_id_": 12415,
+                "_type": "Activity",
+                "features": {
+                    "_id_": 12416,
+                    "_type": "Activity.Features",
+                    "list_": []
+                },
+                "floating": {
+                    "_id_": 12417,
+                    "_type": "Boolean",
+                    "value_": false
+                },
+                "theme": {
+                    "_id_": 12418,
+                    "_type": "Theme.DayNight"
+                },
+                "label": {
+                    "_id_": 12419,
+                    "_type": "String",
+                    "value_": ""
+                },
+                "contentView": {
+                    "_id_": 12420,
+                    "_type": "RelativeLayout",
+                    "id": {
+                        "_id_": 12421,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 12422,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 12423,
+                                "_type": "WebView",
+                                "webChromeClient": {
+                                    "_id_": 12424,
+                                    "_type": "WebView.WebChromeClient"
+                                },
+                                "webViewClient": {
+                                    "_id_": 12425,
+                                    "_type": "WebView.WebViewClient"
+                                },
+                                "id": {
+                                    "_id_": 12426,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "interfaces": {
+                                    "_id_": 12427,
+                                    "_type": "List",
+                                    "list_": []
+                                },
+                                "zoom": {
+                                    "_id_": 12428,
+                                    "_type": "Boolean",
+                                    "value_": false
+                                },
+                                "url": {
+                                    "_id_": 12429,
+                                    "_type": "URL",
+                                    "url": {
+                                        "_id_": 12430,
+                                        "_type": "String",
+                                        "value_": "https:\/\/vscode.dev"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "toolbar": {
+                    "_id_": 12431,
+                    "_type": "Toolbar",
+                    "id": {
+                        "_id_": 12432,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 12433,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 12434,
+                                "_type": "Button",
+                                "onClick": {
+                                    "_id_": 12435,
+                                    "_type": "Sequence",
+                                    "list_": [
+                                        {
+                                            "_id_": 12436,
+                                            "_type": "Activity.Finish"
+                                        }
+                                    ]
+                                },
+                                "id": {
+                                    "_id_": 12437,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:background": {
+                                    "_id_": 12438,
+                                    "_type": "Color",
+                                    "color_": -16777216
+                                },
+                                "android:text": {
+                                    "_id_": 12439,
+                                    "_type": "String",
+                                    "value_": "X"
+                                },
+                                "android:textAlignment": {
+                                    "_id_": 12440,
+                                    "_type": "View.TextAlignment",
+                                    "value_": "viewStart"
+                                },
+                                "android:textColor": {
+                                    "_id_": 12441,
+                                    "_type": "Color",
+                                    "color_": -65536
+                                }
+                            }
+                        ]
+                    },
+                    "android:background": {
+                        "_id_": 12442,
+                        "_type": "Color",
+                        "color_": -16777216
+                    },
+                    "app:titleTextColor": {
+                        "_id_": 12443,
+                        "_type": "Color",
+                        "color_": -16777216
+                    }
+                },
+                "background": {
+                    "_id_": 12444,
+                    "_type": "Color",
+                    "color_": -16777216
+                },
+                "name": {
+                    "_id_": 12445,
+                    "_type": "String",
+                    "value_": "Code"
                 }
             },
             {
@@ -1343,7 +1768,7 @@
                 "color": {
                     "_id_": 309,
                     "_type": "Color",
-                    "color_": -16703984
+                    "color_": -14737633
                 },
                 "configuration": {
                     "_id_": 310,
@@ -1366,7 +1791,7 @@
                 "color": {
                     "_id_": 314,
                     "_type": "Color",
-                    "color_": -12101811
+                    "color_": -14737633
                 },
                 "name": {
                     "_id_": 315,
@@ -1402,7 +1827,7 @@
                     "colorAccent": {
                         "_id_": 322,
                         "_type": "Color",
-                        "color_": -14508289
+                        "color_": -16729601
                     },
                     "colorPrimaryDark": {
                         "_id_": 323,
@@ -1414,6 +1839,141 @@
                         }
                     }
                 }
+            },
+            {
+                "_id_": 6960,
+                "_type": "Activity",
+                "features": {
+                    "_id_": 6962,
+                    "_type": "Activity.Features",
+                    "list_": []
+                },
+                "floating": {
+                    "_id_": 9964,
+                    "_type": "Boolean",
+                    "value_": true
+                },
+                "theme": {
+                    "_id_": 6964,
+                    "_type": "Theme.DayNight"
+                },
+                "label": {
+                    "_id_": 8099,
+                    "_type": "String",
+                    "value_": ""
+                },
+                "contentView": {
+                    "_id_": 6966,
+                    "_type": "RelativeLayout",
+                    "id": {
+                        "_id_": 6970,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 6968,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 7353,
+                                "_type": "WebView",
+                                "id": {
+                                    "_id_": 7355,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "zoom": {
+                                    "_id_": 8091,
+                                    "_type": "Boolean",
+                                    "value_": false
+                                },
+                                "url": {
+                                    "_id_": 7357,
+                                    "_type": "URL",
+                                    "url": {
+                                        "_id_": 7358,
+                                        "_type": "String",
+                                        "value_": "https:\/\/github.com"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "toolbar": {
+                    "_id_": 10343,
+                    "_type": "Toolbar",
+                    "id": {
+                        "_id_": 10345,
+                        "_type": "String",
+                        "value_": ""
+                    },
+                    "views": {
+                        "_id_": 10347,
+                        "_type": "ViewList",
+                        "list_": [
+                            {
+                                "_id_": 10349,
+                                "_type": "Button",
+                                "onClick": {
+                                    "_id_": 10352,
+                                    "_type": "Sequence",
+                                    "list_": [
+                                        {
+                                            "_id_": 10356,
+                                            "_type": "Activity.Finish"
+                                        }
+                                    ]
+                                },
+                                "id": {
+                                    "_id_": 10354,
+                                    "_type": "String",
+                                    "value_": ""
+                                },
+                                "android:background": {
+                                    "_id_": 10364,
+                                    "_type": "Color",
+                                    "color_": -16777216
+                                },
+                                "android:text": {
+                                    "_id_": 10350,
+                                    "_type": "String",
+                                    "value_": "X"
+                                },
+                                "android:textAlignment": {
+                                    "_id_": 10761,
+                                    "_type": "View.TextAlignment",
+                                    "value_": "viewStart"
+                                },
+                                "android:textColor": {
+                                    "_id_": 10358,
+                                    "_type": "Color",
+                                    "color_": -65536
+                                }
+                            }
+                        ]
+                    },
+                    "android:background": {
+                        "_id_": 10370,
+                        "_type": "Color",
+                        "color_": -16777216
+                    },
+                    "app:titleTextColor": {
+                        "_id_": 10740,
+                        "_type": "Color",
+                        "color_": -16777216
+                    }
+                },
+                "background": {
+                    "_id_": 8097,
+                    "_type": "Color",
+                    "color_": -16777216
+                },
+                "name": {
+                    "_id_": 6971,
+                    "_type": "String",
+                    "value_": "Github"
+                }
             }
         ]
     },
@@ -1422,23 +1982,51 @@
         "_type": "App.Settings",
         "debugBuild": {
             "_id_": 326,
-            "_type": "App.Settings.DebugBuild"
+            "_type": "App.Settings.DebugBuild",
+            "useReleaseKeystore": {
+                "_id_": 12933,
+                "_type": "Boolean",
+                "value_": true
+            },
+            "includeAssets": {
+                "_id_": 13377,
+                "_type": "Boolean",
+                "value_": true
+            }
         },
         "releaseBuild": {
             "_id_": 327,
             "_type": "App.Settings.ReleaseBuild"
         }
     },
+    "debug": {
+        "_id_": 13412,
+        "_type": "Debug",
+        "disabled": {
+            "_id_": 13413,
+            "_type": "Boolean",
+            "value_": true
+        }
+    },
     "packaging": {
         "_id_": 328,
         "_type": "App.Packaging",
+        "debug": {
+            "_id_": 13385,
+            "_type": "Debug",
+            "disabled": {
+                "_id_": 13386,
+                "_type": "Boolean",
+                "value_": true
+            }
+        },
         "icon": {
             "_id_": 329,
             "_type": "AdaptiveIcon",
             "background": {
                 "_id_": 330,
                 "_type": "Color",
-                "color_": -1
+                "color_": -16777216
             },
             "foreground": {
                 "_id_": 331,
@@ -1467,12 +2055,72 @@
         "label": {
             "_id_": 336,
             "_type": "String",
-            "value_": "Editor"
+            "value_": "R-Studio Mobile"
         },
         "versionName": {
             "_id_": 337,
             "_type": "String",
             "value_": "v1"
+        },
+        "queries": {
+            "_id_": 13866,
+            "_type": "List",
+            "list_": [
+                {
+                    "_id_": 13868,
+                    "_type": "App.IntentQuery",
+                    "debug": {
+                        "_id_": 13900,
+                        "_type": "Debug",
+                        "disabled": {
+                            "_id_": 13901,
+                            "_type": "Boolean",
+                            "value_": true
+                        }
+                    },
+                    "action": {
+                        "_id_": 13870,
+                        "_type": "String",
+                        "value_": "com.retex.rstudiomobile"
+                    }
+                },
+                {
+                    "_id_": 13872,
+                    "_type": "App.PackageQuery",
+                    "debug": {
+                        "_id_": 13897,
+                        "_type": "Debug",
+                        "disabled": {
+                            "_id_": 13898,
+                            "_type": "Boolean",
+                            "value_": true
+                        }
+                    },
+                    "name": {
+                        "_id_": 13874,
+                        "_type": "String",
+                        "value_": "com.retex.rstudiomobile"
+                    }
+                },
+                {
+                    "_id_": 13876,
+                    "_type": "App.ProviderQuery",
+                    "debug": {
+                        "_id_": 13894,
+                        "_type": "Debug",
+                        "disabled": {
+                            "_id_": 13895,
+                            "_type": "Boolean",
+                            "value_": true
+                        }
+                    },
+                    "authorities": {
+                        "_id_": 13878,
+                        "_type": "String",
+                        "value_": "com.retex.rstudiomobile"
+                    }
+                }
+            ]
         },
         "versionCode": {
             "_id_": 338,
@@ -1486,13 +2134,42 @@
         },
         "permissions": {
             "_id_": 340,
-            "_type": "App.Permissions"
+            "_type": "App.Permissions",
+            "REQUEST_DELETE_PACKAGES": {
+                "_id_": 13879,
+                "_type": "Boolean",
+                "value_": true
+            },
+            "WRITE_EXTERNAL_STORAGE": {
+                "_id_": 13388,
+                "_type": "Boolean",
+                "value_": true
+            },
+            "debug": {
+                "_id_": 13881,
+                "_type": "Debug",
+                "disabled": {
+                    "_id_": 13882,
+                    "_type": "Boolean",
+                    "value_": true
+                }
+            },
+            "EXPAND_STATUS_BAR": {
+                "_id_": 3086,
+                "_type": "Boolean",
+                "value_": true
+            },
+            "READ_EXTERNAL_STORAGE": {
+                "_id_": 6241,
+                "_type": "Boolean",
+                "value_": true
+            }
         },
         "packageName": {
             "_id_": 341,
             "_type": "String",
-            "value_": "com.aaappps.editor"
+            "value_": "com.retex.rstudiomobile"
         }
     },
-    "_abVer": 221
+    "_abVer": 224
 }
